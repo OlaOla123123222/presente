@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Para a Mikaelly 💕</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  :root {
+    --rosa: #e78aa8;
+    --rosa-claro: #fbe4ec;
+    --rosa-forte: #d4537e;
+    --lilas: #b89ce0;
+    --amarelo: #f5c453;
+    --verde: #7cae7a;
+    --texto: #5a3a48;
+    --creme: #fff8f6;
+  }
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
+    background: linear-gradient(180deg, #fff0f5 0%, #fce7f0 40%, #f8e0ec 100%);
+    color: var(--texto);
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Pétalas caindo */
+  .petala {
+    position: fixed;
+    top: -40px;
+    font-size: 20px;
+    pointer-events: none;
+    z-index: 1;
+    animation: cair linear infinite;
+    opacity: 0.85;
+  }
+  @keyframes cair {
+    0% { transform: translateY(-40px) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.85; }
+    90% { opacity: 0.85; }
+    100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+  }
+
+  section {
+    position: relative;
+    z-index: 2;
+    padding: 40px 24px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* CAPA */
+  #capa { justify-content: center; }
+
+  .flor-topo {
+    font-size: 60px;
+    margin-bottom: 10px;
+    animation: flutuar 4s ease-in-out infinite;
+  }
+  @keyframes flutuar {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-14px) rotate(3deg); }
+  }
+
+  h1 {
+    font-family: 'Georgia', serif;
+    font-size: 34px;
+    color: var(--rosa-forte);
+    margin-bottom: 8px;
+    line-height: 1.2;
+    text-shadow: 0 2px 8px rgba(212,83,126,0.15);
+  }
+
+  .subtitulo {
+    font-size: 17px;
+    color: var(--lilas);
+    font-style: italic;
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    background: linear-gradient(135deg, var(--rosa) 0%, var(--rosa-forte) 100%);
+    color: white;
+    border: none;
+    padding: 15px 34px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(212,83,126,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulsar 2.5s ease-in-out infinite;
+  }
+  .btn:active { transform: scale(0.94); }
+  @keyframes pulsar {
+    0%, 100% { box-shadow: 0 8px 20px rgba(212,83,126,0.35); }
+    50% { box-shadow: 0 8px 32px rgba(212,83,126,0.6); }
+  }
+
+  .seta-baixo {
+    margin-top: 40px;
+    font-size: 26px;
+    color: var(--rosa);
+    animation: quicar 1.6s ease-in-out infinite;
+  }
+  @keyframes quicar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+
+  /* CARTÃO / caixas */
+  .cartao {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(6px);
+    border-radius: 24px;
+    padding: 28px 24px;
+    box-shadow: 0 10px 30px rgba(212,83,126,0.15);
+    border: 2px solid rgba(231,138,168,0.3);
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  h2 {
+    font-family: 'Georgia', serif;
+    font-size: 26px;
+    color: var(--rosa-forte);
+    margin-bottom: 18px;
+  }
+
+  p.texto {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--texto);
+    margin-bottom: 14px;
+  }
+
+  /* CONTADOR */
+
+  /* CARROSSEL DE FLORES */
+  .flores-grid {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .flor-card {
+    background: white;
+    border-radius: 20px;
+    padding: 18px 12px;
+    width: 100px;
+    box-shadow: 0 6px 16px rgba(212,83,126,0.15);
+    cursor: pointer;
+    transition: transform 0.25s;
+  }
+  .flor-card:active { transform: scale(0.92) rotate(-4deg); }
+  .flor-card .emoji { font-size: 44px; display: block; margin-bottom: 8px; animation: girar-suave 6s linear infinite; }
+  @keyframes girar-suave { 0%{transform:rotate(-8deg);}50%{transform:rotate(8deg);}100%{transform:rotate(-8deg);} }
+  .flor-card .nome { font-size: 14px; font-weight: bold; color: var(--rosa-forte); }
+  .flor-msg {
+    margin-top: 18px;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--lilas);
+    min-height: 48px;
+    transition: opacity 0.3s;
+  }
+
+  /* MOTIVOS */
+  .motivo {
+    background: rgba(255,255,255,0.8);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: 0 4px 12px rgba(212,83,126,0.12);
+    border-left: 5px solid var(--rosa);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  .motivo.aparece { opacity: 1; transform: translateX(0); }
+  .motivo .ico { font-size: 26px; flex-shrink: 0; }
+
+  /* CORAÇÃO INTERATIVO */
+  #zona-coracao {
+    position: relative;
+    width: 100%;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .coracao-grande {
+    font-size: 90px;
+    cursor: pointer;
+    animation: bater 1.2s ease-in-out infinite;
+    user-select: none;
+  }
+  @keyframes bater {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.15); }
+    40% { transform: scale(1); }
+  }
+  .contador-toques {
+    margin-top: 14px;
+    font-size: 15px;
+    color: var(--rosa-forte);
+    font-weight: bold;
+  }
+  .mini-coracao {
+    position: absolute;
+    font-size: 24px;
+    pointer-events: none;
+    animation: subir-fade 1.2s ease-out forwards;
+  }
+  @keyframes subir-fade {
+    0% { transform: translateY(0) scale(0.5); opacity: 1; }
+    100% { transform: translateY(-120px) scale(1.4); opacity: 0; }
+  }
+
+  /* CARTA FINAL */
+  .assinatura {
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    color: var(--rosa-forte);
+    margin-top: 20px;
+    font-style: italic;
+  }
+
+  .rodape {
+    padding: 30px 20px 40px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--lilas);
+    position: relative;
+    z-index: 2;
+  }
+
+  .buque {
+    font-size: 40px;
+    margin: 20px 0;
+    animation: flutuar 4s ease-in-out infinite;
+  }
+
+  /* Música / mensagem surpresa */
+  .surpresa-box {
+    margin-top: 16px;
+    padding: 16px;
+    background: rgba(184,156,224,0.15);
+    border-radius: 16px;
+    font-size: 16px;
+    line-height: 1.6;
+    display: none;
+  }
+  .surpresa-box.mostrar { display: block; animation: aparecer 0.6s ease; }
+  @keyframes aparecer { from{opacity:0;transform:scale(0.9);} to{opacity:1;transform:scale(1);} }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<section id="capa">
+  <div class="flor-topo">🌷</div>
+  <h1>Para a minha<br>Mikaelly</h1>
+  <p class="subtitulo">um cantinho feito só para ti 💕</p>
+  <button class="btn" onclick="document.getElementById('mensagem').scrollIntoView({behavior:'smooth'})">Abrir o meu coração 🌸</button>
+  <div class="seta-baixo">⌄</div>
+</section>
+
+<!-- MENSAGEM + CONTADOR -->
+<section id="mensagem">
+  <div class="cartao">
+    <h2>1 mês juntos 🥰</h2>
+    <p class="texto">Mikaelly, hoje comemoramos o nosso primeiro mês de namoro. Parece pouco, mas cada segundo ao teu lado já vale um mundo inteiro para mim.</p>
+  </div>
+</section>
+
+<!-- FLORES INTERATIVAS -->
+<section id="flores">
+  <div class="cartao">
+    <h2>As tuas flores 🌻</h2>
+    <p class="texto">Toca em cada flor que tu amas 💐</p>
+    <div class="flores-grid">
+      <div class="flor-card" onclick="mostrarFlor('tulipa')">
+        <span class="emoji">🌷</span>
+        <span class="nome">Túlipa</span>
+      </div>
+      <div class="flor-card" onclick="mostrarFlor('lirio')">
+        <span class="emoji">🌸</span>
+        <span class="nome">Lírio</span>
+      </div>
+      <div class="flor-card" onclick="mostrarFlor('girassol')">
+        <span class="emoji">🌻</span>
+        <span class="nome">Girassol</span>
+      </div>
+    </div>
+    <p class="flor-msg" id="florMsg">✨ escolhe uma flor ✨</p>
+  </div>
+</section>
+
+<!-- MOTIVOS -->
+<section id="motivos">
+  <div class="cartao">
+    <h2>Porque gosto de ti 💗</h2>
+    <div class="motivo"><span class="ico">🌷</span> Pelo teu sorriso, que ilumina qualquer dia cinzento.</div>
+    <div class="motivo"><span class="ico">🌟</span> Por seres tão doce, delicada e especial como as tuas flores.</div>
+    <div class="motivo"><span class="ico">💫</span> Por me fazeres sentir o namorado mais sortudo do mundo.</div>
+    <div class="motivo"><span class="ico">🌻</span> Porque contigo tudo fica mais bonito, como um campo de girassóis.</div>
+    <div class="motivo"><span class="ico">💕</span> Simplesmente por seres tu, a minha Mikaelly.</div>
+  </div>
+</section>
+
+<!-- CORAÇÃO INTERATIVO -->
+<section id="coracao">
+  <div class="cartao">
+    <h2>Quantas vezes te amo? 💖</h2>
+    <p class="texto">Toca no coração e conta comigo 👇</p>
+    <div id="zona-coracao">
+      <div class="coracao-grande" onclick="baterCoracao(event)">❤️</div>
+      <div class="contador-toques" id="toques">toques: 0</div>
+    </div>
+  </div>
+</section>
+
+<!-- CARTA FINAL -->
+<section id="carta">
+  <div class="cartao">
+    <h2>Uma carta para ti 💌</h2>
+    <p class="texto">Minha Mikaelly, se eu pudesse escolher um buquê para representar o que sinto, seria feito de túlipas pela ternura, lírios pela pureza do nosso amor, e girassóis porque, tal como eles seguem o sol, o meu coração segue-te sempre a ti.</p>
+    <p class="texto">Que este seja o primeiro de muitíssimos meses. Obrigado por entrares na minha vida e por a tornares tão colorida. </p>
+    <div class="buque">💐</div>
+    <button class="btn" onclick="revelarSurpresa()">Toca para uma última surpresa 🎁</button>
+    <div class="surpresa-box" id="surpresa">
+      💞 <strong>Eu amo-te, Mikaelly.</strong> 💞<br>
+      Hoje, amanhã e em cada mês que vier.
+    </div>
+    <p class="assinatura">Com todo o meu amor,<br>o teu namorado 💕</p>
+  </div>
+</section>
+
+<div class="rodape">
+  Feito com 💗 só para ti · Mikaelly & eu
+</div>
+
+<script>
+  // === PÉTALAS CAINDO ===
+  const emojisPetalas = ['🌷','🌸','🌻','💗','🌼','💐','💕','🌺'];
+  function criarPetala() {
+    const p = document.createElement('div');
+    p.className = 'petala';
+    p.textContent = emojisPetalas[Math.floor(Math.random()*emojisPetalas.length)];
+    p.style.left = Math.random()*100 + 'vw';
+    const dur = 6 + Math.random()*6;
+    p.style.animationDuration = dur + 's';
+    p.style.fontSize = (16 + Math.random()*16) + 'px';
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), dur*1000);
+  }
+  setInterval(criarPetala, 700);
+  for(let i=0;i<6;i++) setTimeout(criarPetala, i*300);
+
+  // === FLORES ===
+  const mensagensFlor = {
+    tulipa: '🌷 A túlipa simboliza amor perfeito. Perfeito, como tu.',
+    lirio: '🌸 O lírio representa pureza e beleza. É a tua cara.',
+    girassol: '🌻 O girassol procura sempre a luz. Eu procuro-te sempre a ti.'
+  };
+  function mostrarFlor(f) {
+    const el = document.getElementById('florMsg');
+    el.style.opacity = 0;
+    setTimeout(() => {
+      el.textContent = mensagensFlor[f];
+      el.style.opacity = 1;
+    }, 200);
+  }
+
+  // === CORAÇÃO ===
+  let toques = 0;
+  const frasesToque = ['te amo','muito','imenso','para sempre','minha flor','és tudo'];
+  function baterCoracao(e) {
+    toques++;
+    document.getElementById('toques').textContent = 'toques: ' + toques;
+    const mini = document.createElement('div');
+    mini.className = 'mini-coracao';
+    mini.textContent = ['❤️','💕','💗','💖','🌸','🌷'][Math.floor(Math.random()*6)];
+    const zona = document.getElementById('zona-coracao');
+    const rect = zona.getBoundingClientRect();
+    mini.style.left = (e.clientX - rect.left - 12) + 'px';
+    mini.style.top = (e.clientY - rect.top - 12) + 'px';
+    zona.appendChild(mini);
+    setTimeout(() => mini.remove(), 1200);
+  }
+
+  // === SURPRESA ===
+  function revelarSurpresa() {
+    document.getElementById('surpresa').classList.add('mostrar');
+  }
+
+  // === MOTIVOS AO SCROLL ===
+  const motivos = document.querySelectorAll('.motivo');
+  const obs = new IntersectionObserver((entradas) => {
+    entradas.forEach((ent, i) => {
+      if (ent.isIntersecting) {
+        setTimeout(() => ent.target.classList.add('aparece'), i * 150);
+      }
+    });
+  }, { threshold: 0.2 });
+  motivos.forEach(m => obs.observe(m));
+</script>
+</body>
+</html>
